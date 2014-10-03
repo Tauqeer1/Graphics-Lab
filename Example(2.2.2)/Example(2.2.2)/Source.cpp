@@ -33,11 +33,11 @@ void initializeGraphics()
 void sierpinski_render()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	GLPoints T[3] = { { 10, 10 }, { 600, 10 }, { 300, 600 } };
+	GLPoints T[3] = { { 10, 10 }, { 100, 10 }, { 55, 100 } };
 	int index = rand() % 3;
 	GLPoints point = T[index];
 	drawDot(point.x, point.y);
-	for (int i = 0; i < 55000; i++)
+	for (int i = 0; i < 1500; i++)
 	{
 		index = rand() % 3;
 		point.x = (point.x + T[index].x) / 2;

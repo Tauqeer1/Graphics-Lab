@@ -37,7 +37,7 @@ void sierpinski_render()
 	int index = rand() % 3;
 	GLPoints point = T[index];
 	drawDot(point.x, point.y);
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 55000; i++)
 	{
 		index = rand() % 3;
 		point.x = (point.x + T[index].x) / 2;

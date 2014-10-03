@@ -1,6 +1,6 @@
 #include<glut.h>
 
-void myInit()
+void initializeDrawingGraphics()
 {
 	glClearColor(1.0, 1.0, 1.0, 1.0);	//Set the background color
 	glColor3f(0.0f, 0.0f, 0.0f);	//Set the drawing color
@@ -22,18 +22,22 @@ void myDisplay()
 	glEnd();
 	glFlush();
 }
-
+void InitializeWindow()
+{
+	glutInitWindowSize(640, 480);	//Set the window size
+	glutInitWindowPosition(100, 100);	//Set the window position on screen
+	glutCreateWindow("Lab01");
+}
+void registerCallBackFunctions()
+{
+	glutDisplayFunc(myDisplay);
+}
 void main(int argc, char **argv)
 {
 	glutInit(&argc, argv);	//Initialize toolkit
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);	//set the display mode
-	glutInitWindowSize(640, 480);	//Set the window size
-	glutInitWindowPosition(100, 100);	//Set the window position on screen
-	glutCreateWindow("Lab01");
-
-	//register call back function
-	glutDisplayFunc(myDisplay);
-
-	myInit();
+	InitializeWindow();
+	registerCallBackFunctions();
+	initializeDrawingGraphics();
 	glutMainLoop();	//Go into a perpetual loop
 }
