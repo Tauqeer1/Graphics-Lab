@@ -113,6 +113,35 @@ void drawingDisplay()
 	glVertex2i(450, 400);	//upper left point	
 	glEnd();
 
+	
+	
+	//glPolygonMode(GL_FRONT, GL_LINE);
+	glBegin(GL_TRIANGLE_FAN);
+	glColor3f(0.2, 0.6, 0.8);
+	glVertex2i(300, 10);
+	glVertex2i(400, 10);
+	glVertex2i(400, 100);
+	glVertex2i(300, 100);
+	glEnd();
+
+	glBegin(GL_POINTS);
+	glVertex2i(420, 10);
+	glVertex2i(420, 200);
+	glVertex2i(520, 200);
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(0.3, 0.3, 0.3);
+	glVertex2i(420, 10);
+	glColor3f(0, 0, 0.6);
+	glVertex2i(520, 10);
+	glColor3f(0.2, 0.4, 0);
+	glVertex2i(520, 100);
+	glColor3f(1, 0.4, 0.6);
+	glVertex2i(420, 100);
+	glVertex2i(420, 200);
+	glVertex2i(520, 200);
+	glEnd();
 	glFlush();
 }
 void InitializeWindow()
