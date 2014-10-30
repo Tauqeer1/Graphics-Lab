@@ -1,4 +1,24 @@
 #include<glut.h>
+#include<math.h>
+
+#include"Point.h"
+#include"turtle.h"
+
+#define M_PI       3.14159265358979323846
+
+void drawArc(Point2 centre, float radius, float startAngle, float sweep)
+{
+	Turtle t;
+	const int n = 30;
+	float angle = startAngle * M_PI / 180;
+	float angleInc = sweep * M_PI / (180 * n);
+	float cx = centre.getX(), cy = centre.getY();
+	t.moveTo(Point2(cx + radius*cos(angle), cy + radius*sin(angle)));
+	for (int k = 1; k < n; k++, angle += angleInc)
+	{
+		t.lineTo(Point2(cx + radius*cos(angle), cy + radius*sin(angle)));
+	}
+}
 
 void myInit()
 {
@@ -7,17 +27,14 @@ void myInit()
 	glLineWidth(4.0f);	//Set the line width
 	gluOrtho2D(0.0, 640.0, 0.0, 480.0);	
 }
-void drawLine(int x1, int y1, int x2, int y2)
-{
-	glBegin(GL_LINES);
-	glVertex2i(x1, y1);		//x1,y1
-	glVertex2i(x2, y2);	//x2,y2
-	glEnd();
-}
+
 void myDisplay()
 {
 	glClear(GL_COLOR_BUFFER_BIT);	//Clear the screen
-	drawLine(50, 90, 50, 190);
+	glColor3f(1.0, 0.0, 0.0);
+	Point2 p(200, 200);
+	drawArc(p, 100, 0, 400);
+
 	glFlush();	//Send to the output screen from buffer
 
 }
@@ -36,3 +53,4 @@ void main(int argc,char **argv)
 	myInit();
 	glutMainLoop();
 }
+

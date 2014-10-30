@@ -15,22 +15,33 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Point.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="turtle.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Point.h">
+    <ClInclude Include="Mario.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="turtle.h">
+    <ClInclude Include="RGBA.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="MarioJump.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="MarioRun1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="MarioRun2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="MarioRun3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="MarioStanding.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
